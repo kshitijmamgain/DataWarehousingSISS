@@ -1,0 +1,794 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/28/2021 6:01:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SDTTWTCL099"
+  DTS:CreatorName="SDTTWTCL099\Kshitij"
+  DTS:DTSID="{62321814-9DA0-4852-94E2-5E65771C233F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.152"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{8FDE1BCC-C699-4A63-BC61-FFD29369E4E7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV file"
+      DTS:DTSID="{F03A6915-22ED-4209-B6AE-0D955E896670}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Kshitij\Desktop\SISS-Test\SSIS Items.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="item_name"
+              DTS:DTSID="{9E85EDC2-8F55-48BE-B39A-D4BED033F4C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="item_id"
+              DTS:DTSID="{A94FD420-4E7A-4EA8-9357-309200D1A977}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="item_category_id"
+              DTS:DTSID="{7C8F0865-91AA-4A6D-8115-353350151B39}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{211279B3-0BE3-44D2-A91A-22DF971ACC67}"
+      DTS:ObjectName="Flat File Connection Manager1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Kshitij\Desktop\SISS-Test\New Text Document.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="item_category_id"
+              DTS:DTSID="{41A4F30F-2D33-40E8-85DD-9E2702C1CDDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="records"
+              DTS:DTSID="{D19EE063-0CE5-44DF-8790-F97ADB2F7B3A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SDTTWTCL099\MSQLSERVER2016.TESTDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F22A7C63-108C-4A67-A969-724EC8BC22A0}"
+      DTS:ObjectName="SDTTWTCL099\MSQLSERVER2016.TESTDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SDTTWTCL099\MSQLSERVER2016;Initial Catalog=TESTDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{11654C21-F8BC-4C5A-B860-2B2E95FFEBE2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ROW">
+      <DTS:VariableValue
+        DTS:DataType="3">5</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3BF88017-D505-43FB-AE5E-34150B4503E5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="GROUPING ITEMS ON CATEGORY ID"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Inputs[Aggregate Input 1].Columns[item_category_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="item_category_id"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_category_id]" />
+                    <inputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Inputs[Aggregate Input 1].Columns[item_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="item_id"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[item_category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[item_category_id]"
+                      name="item_category_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_category_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[records]"
+                      dataType="ui8"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[records]"
+                      name="records">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="ORDERING BY HIGHEST RECORDS"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Inputs[Sort Input].Columns[item_category_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="item_category_id"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[item_category_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Inputs[Sort Input].Columns[records]"
+                      cachedDataType="ui8"
+                      cachedName="records"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[records]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">-1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output].Columns[item_category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output].Columns[item_category_id]"
+                      name="item_category_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[item_category_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output].Columns[records]"
+                      dataType="ui8"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output].Columns[records]"
+                      name="records"
+                      sortKeyPosition="-1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1].Columns[records]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="READING CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].ExternalColumns[item_name]"
+                      length="50"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_name]"
+                      name="item_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].ExternalColumns[item_id]"
+                      length="50"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_id]"
+                      name="item_id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].ExternalColumns[item_category_id]"
+                      length="50"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].Columns[item_category_id]"
+                      name="item_category_id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].ExternalColumns[item_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_name" />
+                    <externalMetadataColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].ExternalColumns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_id" />
+                    <externalMetadataColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output].ExternalColumns[item_category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_category_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="STORE AS TABLE IN SQL SERVER"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[test_records]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SDTTWTCL099\MSQLSERVER2016.TESTDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SDTTWTCL099\MSQLSERVER2016.TESTDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input].Columns[item_category_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="item_category_id"
+                      externalMetadataColumnId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input].ExternalColumns[item_category_id]"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output].Columns[item_category_id]" />
+                    <inputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input].Columns[records]"
+                      cachedDataType="ui8"
+                      cachedName="records"
+                      cachedSortKeyPosition="-1"
+                      externalMetadataColumnId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input].ExternalColumns[records]"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output].Columns[records]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input].ExternalColumns[item_category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="item_category_id" />
+                    <externalMetadataColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input].ExternalColumns[records]"
+                      dataType="numeric"
+                      name="records"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT.Paths[Aggregate Output 1]"
+              endId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT.Paths[Flat File Source Output]"
+              endId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID.Inputs[Aggregate Input 1]"
+              name="Flat File Source Output"
+              startId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT.Paths[Sort Output]"
+              endId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="411,42"
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT"
+          TopLeft="97.5,78.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\READING CSV"
+          TopLeft="130,31" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\GROUPING ITEMS ON CATEGORY ID"
+          TopLeft="75,101" />
+        <EdgeLayout
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT.Paths[Flat File Source Output]"
+          TopLeft="209.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="259,42"
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER"
+          TopLeft="80,247" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\ORDERING BY HIGHEST RECORDS"
+          TopLeft="81,175" />
+        <EdgeLayout
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT.Paths[Aggregate Output 1]"
+          TopLeft="212.75,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT.Paths[Sort Output]"
+          TopLeft="211.75,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CREATING GROUPED TABLE TO TRACK CATEGORY ID COUNT\STORE AS TABLE IN SQL SERVER">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
